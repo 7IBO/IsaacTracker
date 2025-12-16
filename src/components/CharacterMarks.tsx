@@ -67,7 +67,7 @@ export const CharacterMarks = ({ character }: CharacterMarksProps) => {
             src={`/assets/gfx/marks/${
               isOnline ? "online_" : ""
             }${difficultyName}/${MarkEnum[mark]}.png`}
-            className={`${difficulty === 0 ? "invert" : ""}w-8 pixelated h-8`}
+            className={`${difficulty === 0 ? "brightness-200 grayscale invert" : ""} pixelated size-8`}
             alt={`Mark ${MarkEnum[mark]}`}
           />
         </div>
