@@ -651,6 +651,12 @@ export namespace Achievements {
     return values[index].valueOf() as AchievementEnum;
   }
 
+  export function getAll(): string[] {
+    return Object.values(AchievementEnum).filter(
+      (v) => typeof v === "string",
+    ) as string[];
+  }
+
   export function getString(index: number): string {
     return Achievements.get(index).toString();
   }

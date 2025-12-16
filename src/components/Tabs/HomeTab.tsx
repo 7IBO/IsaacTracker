@@ -280,6 +280,93 @@ export const HomeTab = () => {
           </div>
         </div>
 
+        {/* Future Developments Section */}
+        <div className="card p-6">
+          <h3 className="font-upheaval mb-4 text-xl text-purple-400">
+            🚀 Future Developments
+          </h3>
+          <div className="space-y-4 text-sm text-gray-300">
+            <p className="text-gray-400">
+              Upcoming features and improvements planned for future releases:
+            </p>
+            <div className="grid gap-4 md:grid-cols-2">
+              {/* Detailed Views */}
+              <div className="rounded-lg border border-purple-500/30 bg-purple-900/10 p-4">
+                <h4 className="mb-3 flex items-center gap-2 font-semibold text-purple-300">
+                  <span className="text-lg">🔍</span>
+                  Detailed Views
+                </h4>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-500">▶</span>
+                    <span>
+                      <span className="font-semibold">Items Details:</span>{" "}
+                      Comprehensive information about each item
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-500">▶</span>
+                    <span>
+                      <span className="font-semibold">Achievements Details:</span>{" "}
+                      Unlock requirements and tips
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-500">▶</span>
+                    <span>
+                      <span className="font-semibold">Entities Details:</span>{" "}
+                      Stats, behaviors, and strategies
+                    </span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Real-time Tracking */}
+              <div className="rounded-lg border border-blue-500/30 bg-blue-900/10 p-4">
+                <h4 className="mb-3 flex items-center gap-2 font-semibold text-blue-300">
+                  <span className="text-lg">📡</span>
+                  Real-time Save Tracking
+                </h4>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-500">▶</span>
+                    <span>
+                      <span className="font-semibold">Desktop Monitoring:</span>{" "}
+                      Background script to track save file changes
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-500">▶</span>
+                    <span>
+                      <span className="font-semibold">Online Sync:</span> Automatic
+                      upload and real-time updates
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-500">▶</span>
+                    <span>
+                      <span className="font-semibold">User Accounts:</span>{" "}
+                      Personalized dashboards and cloud saves
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-500">▶</span>
+                    <span>
+                      <span className="font-semibold">Progress History:</span> Track
+                      your journey over time
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="mt-4 rounded-lg border border-gray-700 bg-gray-900/30 p-3">
+              <p className="text-xs text-gray-500">
+                💡 These features are in planning phase. Stay tuned for updates!
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* About Section */}
         <div className="card p-6">
           <h3 className="font-upheaval mb-4 text-xl text-gray-400">ℹ️ About</h3>

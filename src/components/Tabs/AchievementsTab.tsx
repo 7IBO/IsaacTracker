@@ -1,6 +1,7 @@
 import { useSave } from "../../contexts/SaveContext";
 import { AchievementItem } from "../AchievementItem";
 import { Achievement } from "../../Models/Achievement";
+import { Achievements } from "@/Helpers/Enums/Achievements";
 
 export const AchievementsTab = () => {
   const { save } = useSave();
@@ -18,10 +19,19 @@ export const AchievementsTab = () => {
     );
   }
 
-  const achievements = save.getAchievements();
-  const unlockedCount = achievements.filter(
-    (a: Achievement) => a.unlocked,
-  ).length;
+  const userAchievements = save.getAchievements();
+
+  const achievements = Achievements.getAll().map((name, index) => ({
+    id: index + 1,
+    name,
+    unlocked: (userAchievements as Achievement[])
+      .filter((a) => a.unlocked)
+      .map((a) => a.toString())
+      .includes(name),
+  }));
+
+  const unlockedCount = achievements.filter((a) => a.unlocked).length;
+
   const totalCount = achievements.length;
   const percentage = ((unlockedCount / totalCount) * 100).toFixed(1);
 
@@ -74,11 +84,8 @@ export const AchievementsTab = () => {
 
       {/* Achievements Grid */}
       <div className="flex flex-wrap justify-center gap-3">
-        {achievements.map((achievement: Achievement) => (
-          <AchievementItem
-            key={achievement.getID()}
-            achievement={achievement}
-          />
+        {achievements.map((achievement) => (
+          <AchievementItem key={achievement.id} achievement={achievement} />
         ))}
       </div>
     </div>
