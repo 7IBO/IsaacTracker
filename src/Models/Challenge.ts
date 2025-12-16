@@ -1,0 +1,32 @@
+import { Challenges } from "@/Helpers/Enums/Challenges";
+
+export class Challenge {
+  private _name: string;
+  private _done: boolean;
+
+  constructor(id: number) {
+    this._name = Challenges.getString(id);
+    console.log(this._name);
+    this._done = false;
+  }
+
+  public setDone(value: boolean): void {
+    this._done = value;
+  }
+
+  public getID(): number {
+    return Challenges.getID(this._name);
+  }
+
+  public getName(): string {
+    return this._name;
+  }
+
+  public isDone(): boolean {
+    return this._done;
+  }
+
+  public toString(): string {
+    return this._name.toString();
+  }
+}

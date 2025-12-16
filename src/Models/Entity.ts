@@ -1,0 +1,92 @@
+export class Entity {
+  private _name: string;
+  private _id: number;
+  private _isBoss: boolean;
+  private _isSpecial: boolean;
+  private _variant: number;
+  private _deaths: number;
+  private _kills: number;
+  private _hits: number;
+  private _encounter: number;
+
+  constructor(
+    id: number,
+    name: string,
+    variant: number,
+    isBoss: boolean,
+    isSpecial: boolean,
+  ) {
+    if (name == "???") name = "Blue Baby";
+
+    this._name = name;
+    this._id = id;
+    this._isBoss = isBoss;
+    this._isSpecial = isSpecial;
+    this._variant = variant;
+    this._kills = 0;
+    this._deaths = 0;
+    this._hits = 0;
+    this._encounter = 0;
+  }
+
+  public getName(): string {
+    return this._name;
+  }
+
+  public getId(): number {
+    return this._id;
+  }
+
+  public getVariant(): number {
+    return this._variant;
+  }
+
+  public getKills(): number {
+    return this._kills;
+  }
+
+  public getDeaths(): number {
+    return this._deaths;
+  }
+
+  public getHits(): number {
+    return this._hits;
+  }
+
+  public getEncounter(): number {
+    return this._encounter;
+  }
+
+  public setKills(kills: number): void {
+    this._kills = kills;
+  }
+
+  public setDeaths(deaths: number): void {
+    this._deaths = deaths;
+  }
+
+  public setHits(hits: number): void {
+    this._hits = hits;
+  }
+
+  public setEncounter(encounter: number): void {
+    this._encounter = encounter;
+  }
+
+  public isBoss(): boolean {
+    return this._isBoss;
+  }
+
+  public isSpecial(): boolean {
+    return this._isSpecial;
+  }
+
+  isUnlocked() {
+    return (
+      this._kills > 0 ||
+      this._deaths > 0 ||
+      this._hits > 0 ||
+      this._encounter > 0
+    );
+  }
+}
