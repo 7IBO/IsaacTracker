@@ -22,4 +22,8 @@ export class Item {
   public setSeen(seen: boolean): void {
     this._seen = seen;
   }
+
+  public getName(): string {
+    return this._name;
+  }
 }

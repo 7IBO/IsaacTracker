@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { SaveProvider } from "./contexts/SaveContext";
 import { Navigation } from "./components/Layout/Navigation";
-import { Loading } from "./components/Layout/Loading";
 import { HomeTab } from "./components/Tabs/HomeTab";
 import { AchievementsTab } from "./components/Tabs/AchievementsTab";
 import { MarksTab } from "./components/Tabs/MarksTab";
@@ -11,7 +10,7 @@ import { BestiaryTab } from "./components/Tabs/BestiaryTab";
 
 function App() {
   const [activeTab, setActiveTab] = useState("menu");
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
 
   const renderTabContent = () => {
     switch (activeTab) {
@@ -35,7 +34,7 @@ function App() {
   return (
     <SaveProvider>
       <div className="min-h-screen flex flex-col">
-        <Loading isVisible={isLoading} />
+        {/* <Loading isVisible={isLoading} /> */}
 
         <Navigation activeTab={activeTab} onTabChange={setActiveTab} />
 

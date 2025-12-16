@@ -61,4 +61,8 @@ export class Character {
   public getName(): string {
     return this._character.toString();
   }
+
+  public getIsTainted(): boolean {
+    return this._tainted;
+  }
 }

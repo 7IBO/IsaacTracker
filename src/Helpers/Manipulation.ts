@@ -83,7 +83,7 @@ export class Manipulation {
     sectionOffsets: number[],
   ): number[] {
     let offset = sectionOffsets[10];
-    let length = this.toUint32(data, offset - 8);
+    // let length = this.toUint32(data, offset - 8);
 
     let resultsOffset = new Array<number>(4).fill(0);
 
