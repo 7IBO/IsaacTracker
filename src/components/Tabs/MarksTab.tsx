@@ -11,7 +11,7 @@ export const MarksTab = () => {
 
   if (!save) {
     return (
-      <div className="mx-auto max-w-7xl px-4 py-8">
+      <div className="mx-auto max-w-7xl py-4 md:py-8">
         <div className="card p-8 text-center">
           <h2 className="font-upheaval mb-4 text-3xl text-red-400">
             ✨ Completion Marks
@@ -49,7 +49,7 @@ export const MarksTab = () => {
     totalMarks > 0 ? ((completedMarks / totalMarks) * 100).toFixed(1) : "0.0";
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-8">
+    <div className="mx-auto max-w-7xl py-4 md:py-8">
       <div className="mb-8">
         <h2 className="font-upheaval mb-6 bg-linear-to-r from-yellow-500 to-orange-500 bg-clip-text text-4xl text-transparent">
           ✨ Completion Marks

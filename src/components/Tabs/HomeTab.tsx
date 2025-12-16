@@ -20,7 +20,7 @@ export const HomeTab = () => {
   };
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-8">
+    <div className="mx-auto max-w-7xl py-4 md:py-8">
       {/* Hero Section */}
       <div className="mb-12 text-center">
         <h1 className="font-upheaval mb-3 bg-linear-to-r from-red-600 via-red-500 to-yellow-500 bg-clip-text text-7xl text-transparent drop-shadow-lg">
@@ -307,7 +307,9 @@ export const HomeTab = () => {
                   <li className="flex items-start gap-2">
                     <span className="text-purple-500">▶</span>
                     <span>
-                      <span className="font-semibold">Achievements Details:</span>{" "}
+                      <span className="font-semibold">
+                        Achievements Details:
+                      </span>{" "}
                       Unlock requirements and tips
                     </span>
                   </li>
@@ -338,8 +340,8 @@ export const HomeTab = () => {
                   <li className="flex items-start gap-2">
                     <span className="text-blue-500">▶</span>
                     <span>
-                      <span className="font-semibold">Online Sync:</span> Automatic
-                      upload and real-time updates
+                      <span className="font-semibold">Online Sync:</span>{" "}
+                      Automatic upload and real-time updates
                     </span>
                   </li>
                   <li className="flex items-start gap-2">
@@ -352,8 +354,8 @@ export const HomeTab = () => {
                   <li className="flex items-start gap-2">
                     <span className="text-blue-500">▶</span>
                     <span>
-                      <span className="font-semibold">Progress History:</span> Track
-                      your journey over time
+                      <span className="font-semibold">Progress History:</span>{" "}
+                      Track your journey over time
                     </span>
                   </li>
                 </ul>

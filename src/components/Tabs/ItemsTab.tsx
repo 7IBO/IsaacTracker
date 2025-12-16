@@ -7,7 +7,7 @@ export const ItemsTab = () => {
 
   if (!save) {
     return (
-      <div className="mx-auto max-w-7xl px-4 py-8">
+      <div className="mx-auto max-w-7xl py-4 md:py-8">
         <div className="card p-8 text-center">
           <h2 className="font-upheaval mb-4 text-3xl text-red-400">🎁 Items</h2>
           <p className="text-gray-400">Please load a save file first.</p>
@@ -22,7 +22,7 @@ export const ItemsTab = () => {
   const percentage = ((seenItems.length / totalItems) * 100).toFixed(1);
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-8">
+    <div className="mx-auto max-w-7xl py-4 md:py-8">
       <div className="mb-8">
         <h2 className="font-upheaval mb-6 bg-linear-to-r from-purple-500 to-pink-500 bg-clip-text text-4xl text-transparent">
           🎁 Items Collection
@@ -78,7 +78,7 @@ export const ItemsTab = () => {
         </h3>
 
         {/* Responsive Grid */}
-        <div className="grid grid-cols-4 gap-8 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12">
+        <div className="grid grid-cols-3 gap-8 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12">
           {items.map((item: Item) => (
             <ItemDisplay key={item.getID()} item={item} />
           ))}

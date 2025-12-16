@@ -7,7 +7,7 @@ export const BestiaryTab = () => {
 
   if (!save) {
     return (
-      <div className="mx-auto max-w-7xl px-4 py-8">
+      <div className="mx-auto max-w-7xl py-4 md:py-8">
         <div className="card p-8 text-center">
           <h2 className="font-upheaval mb-4 text-3xl text-red-400">
             👹 Bestiary
@@ -31,7 +31,7 @@ export const BestiaryTab = () => {
   const percentage = ((unlockedCount / totalCount) * 100).toFixed(1);
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-8">
+    <div className="mx-auto max-w-7xl py-4 md:py-8">
       <div className="mb-8">
         <h2 className="font-upheaval mb-6 bg-linear-to-r from-green-500 to-emerald-500 bg-clip-text text-4xl text-transparent">
           👹 Bestiary

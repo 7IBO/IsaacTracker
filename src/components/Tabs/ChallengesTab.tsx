@@ -9,7 +9,7 @@ export const ChallengesTab = () => {
 
   if (!save) {
     return (
-      <div className="mx-auto max-w-7xl px-4 py-8">
+      <div className="mx-auto max-w-7xl py-4 md:py-8">
         <div className="card p-8 text-center">
           <h2 className="font-upheaval mb-4 text-3xl text-red-400">
             ⚡ Challenges
@@ -75,7 +75,7 @@ export const ChallengesTab = () => {
   }
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-8">
+    <div className="mx-auto max-w-7xl py-4 md:py-8">
       <div className="mb-8">
         <h2 className="font-upheaval mb-6 bg-linear-to-r from-orange-500 to-red-500 bg-clip-text text-4xl text-transparent">
           ⚡ Challenges
