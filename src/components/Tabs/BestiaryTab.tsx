@@ -70,14 +70,8 @@ export const BestiaryTab = () => {
           </div>
 
           <div className="mt-2 flex justify-between text-xs text-gray-500">
-            <span>
-              {unlockedCount}
-              discovered
-            </span>
-            <span>
-              {totalCount - unlockedCount}
-              undiscovered
-            </span>
+            <span>{unlockedCount} discovered</span>
+            <span>{totalCount - unlockedCount} undiscovered</span>
           </div>
 
           <div className="mt-4 rounded-lg border border-blue-500/30 bg-blue-900/20 p-3">
