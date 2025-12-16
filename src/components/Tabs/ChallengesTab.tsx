@@ -9,9 +9,9 @@ export const ChallengesTab = () => {
 
   if (!save) {
     return (
-      <div className="max-w-7xl mx-auto px-4 py-8">
+      <div className="mx-auto max-w-7xl px-4 py-8">
         <div className="card p-8 text-center">
-          <h2 className="text-3xl font-upheaval mb-4 text-red-400">
+          <h2 className="font-upheaval mb-4 text-3xl text-red-400">
             ⚡ Challenges
           </h2>
           <p className="text-gray-400">Please load a save file first.</p>
@@ -75,32 +75,32 @@ export const ChallengesTab = () => {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8">
+    <div className="mx-auto max-w-7xl px-4 py-8">
       <div className="mb-8">
-        <h2 className="text-4xl font-upheaval mb-6 text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-red-500">
+        <h2 className="font-upheaval mb-6 bg-linear-to-r from-orange-500 to-red-500 bg-clip-text text-4xl text-transparent">
           ⚡ Challenges
         </h2>
 
         {/* Progress Card */}
-        <div className="card p-6 mb-6">
-          <div className="flex items-center justify-between mb-4">
+        <div className="card mb-6 p-6">
+          <div className="mb-4 flex items-center justify-between">
             <div>
-              <p className="text-sm text-gray-400 uppercase tracking-wider">
+              <p className="text-sm tracking-wider text-gray-400 uppercase">
                 Challenges Completed
               </p>
               <p className="text-3xl font-bold">
-                <span className="text-transparent bg-clip-text bg-linear-to-r from-orange-400 to-red-500">
+                <span className="bg-linear-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
                   {completedCount}
                 </span>
-                <span className="text-gray-500 mx-2">/</span>
+                <span className="mx-2 text-gray-500">/</span>
                 <span className="text-gray-400">{totalCount}</span>
               </p>
             </div>
             <div className="text-right">
-              <p className="text-sm text-gray-400 uppercase tracking-wider">
+              <p className="text-sm tracking-wider text-gray-400 uppercase">
                 Completion Rate
               </p>
-              <p className="text-3xl font-bold text-transparent bg-clip-text bg-linear-to-r from-orange-400 to-red-500">
+              <p className="bg-linear-to-r from-orange-400 to-red-500 bg-clip-text text-3xl font-bold text-transparent">
                 {percentage}%
               </p>
             </div>
@@ -114,7 +114,7 @@ export const ChallengesTab = () => {
             ></div>
           </div>
 
-          <div className="flex justify-between mt-2 text-xs text-gray-500">
+          <div className="mt-2 flex justify-between text-xs text-gray-500">
             <span>{completedCount} completed</span>
             <span>{totalCount - completedCount} remaining</span>
           </div>
@@ -122,7 +122,7 @@ export const ChallengesTab = () => {
       </div>
 
       {/* Challenges by DLC - Responsive Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
         {challengesByDLC.map((dlcChallenges, index) => {
           const dlc = getDLCInfo(index + 1);
           const dlcCompleted = dlcChallenges.filter((c) => c.isDone()).length;
@@ -132,14 +132,14 @@ export const ChallengesTab = () => {
           return (
             <div key={index} className="card p-6">
               <div className="mb-4">
-                <h3 className={`text-2xl font-upheaval mb-2 ${dlc.color}`}>
+                <h3 className={`font-upheaval mb-2 text-2xl ${dlc.color}`}>
                   {dlc.name}
                 </h3>
                 <div className="flex items-center gap-2 text-sm">
                   <span className="text-gray-400">
                     {dlcCompleted}/{dlcTotal}
                   </span>
-                  <div className="flex-1 h-2 bg-black/50 rounded-full overflow-hidden">
+                  <div className="h-2 flex-1 overflow-hidden rounded-full bg-black/50">
                     <div
                       className={`h-full bg-linear-to-r ${dlc.gradient} transition-all duration-500`}
                       style={{ width: `${dlcPercentage}%` }}
@@ -151,7 +151,7 @@ export const ChallengesTab = () => {
                 </div>
               </div>
 
-              <div className="space-y-2">
+              <div className="flex flex-col space-y-2">
                 {dlcChallenges.map((challenge: Challenge) => (
                   <ChallengeItem
                     key={challenge.getID()}

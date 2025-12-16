@@ -33,12 +33,12 @@ function App() {
 
   return (
     <SaveProvider>
-      <div className="min-h-screen flex flex-col">
+      <div className="flex min-h-screen flex-col">
         {/* <Loading isVisible={isLoading} /> */}
 
         <Navigation activeTab={activeTab} onTabChange={setActiveTab} />
 
-        <div className="grow container mx-auto p-4">{renderTabContent()}</div>
+        <div className="container mx-auto grow p-4">{renderTabContent()}</div>
       </div>
     </SaveProvider>
   );

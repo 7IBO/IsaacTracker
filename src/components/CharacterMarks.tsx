@@ -3,6 +3,7 @@ import { MarkEnum } from "../Helpers/Enums/Marks";
 import { DifficultyEnum } from "../Helpers/Enums/Difficulties";
 import { VersionEnum } from "../Helpers/Enums/Versions";
 import { Constants } from "../Helpers/Constants";
+import { Tooltip } from "./Tooltip";
 
 interface CharacterMarksProps {
   character: Character;
@@ -22,42 +23,72 @@ export const CharacterMarks = ({ character }: CharacterMarksProps) => {
     const isOnline = type === VersionEnum.ONLINE;
     const difficultyName =
       difficulty === 0 ? "normal" : DifficultyEnum[difficulty].toLowerCase();
+    const markName = MarkEnum[mark];
+
+    const getDifficultyColor = () => {
+      switch (difficulty) {
+        case 0:
+          return "text-gray-400";
+        case 1:
+          return "text-orange-400";
+        case 2:
+          return "text-red-500";
+        default:
+          return "text-gray-400";
+      }
+    };
+
+    const tooltipContent = (
+      <div className="text-center">
+        <div className="font-bold text-yellow-400">{markName}</div>
+        <div className={`mt-1 text-xs ${getDifficultyColor()}`}>
+          {difficultyName.charAt(0).toUpperCase() + difficultyName.slice(1)}
+        </div>
+        {isOnline && (
+          <div className="mt-1 text-xs text-blue-400">Online Mode</div>
+        )}
+        {difficulty === 0 && (
+          <div className="mt-1 text-xs text-gray-500">Not completed</div>
+        )}
+      </div>
+    );
 
     return (
-      <div
-        key={`${type}-${index}`}
-        className="p-0.5 hover:scale-110 transition-transform cursor-pointer"
-        data-player={charId}
-        data-id={mark}
-        data-difficulty={difficulty}
-        data-type={type}
-      >
-        <img
-          loading="lazy"
-          src={`/assets/gfx/marks/${
-            isOnline ? "online_" : ""
-          }${difficultyName}/${MarkEnum[mark]}.png`}
-          className={`${difficulty === 0 ? "invert " : ""}w-8 h-8 pixelated`}
-          alt={`Mark ${MarkEnum[mark]}`}
-        />
-      </div>
+      <Tooltip key={`${type}-${index}`} content={tooltipContent}>
+        <div
+          className="cursor-pointer p-0.5 transition-transform hover:scale-110"
+          data-player={charId}
+          data-id={mark}
+          data-difficulty={difficulty}
+          data-type={type}
+        >
+          <img
+            loading="lazy"
+            src={`/assets/gfx/marks/${
+              isOnline ? "online_" : ""
+            }${difficultyName}/${MarkEnum[mark]}.png`}
+            className={`${difficulty === 0 ? "invert" : ""}w-8 pixelated h-8`}
+            alt={`Mark ${MarkEnum[mark]}`}
+          />
+        </div>
+      </Tooltip>
     );
   };
 
   return (
-    <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 hover:border-yellow-500/30 transition-all">
+    <div className="rounded-lg border border-gray-700 bg-gray-800/50 p-4 transition-all hover:border-yellow-500/30">
       {/* Character Header */}
-      <div className="flex items-center gap-3 mb-4 pb-3 border-b border-gray-700/50">
-        <div className="w-16 h-16 shrink-0 bg-gray-900/50 rounded-lg p-2">
+      <div className="mb-4 flex items-center gap-3 border-b border-gray-700/50 pb-3">
+        <div className="h-16 w-16 shrink-0 rounded-lg bg-gray-900/50 p-2">
           <img
             loading="lazy"
             src={`/assets/gfx/characters/${character.getName()}.png`}
             style={{ filter: "invert(100%)" }}
-            className="w-full h-full object-contain"
+            className="h-full w-full object-contain"
             alt={character.getName()}
           />
         </div>
-        <h4 className="text-lg font-upheaval text-gray-200 truncate">
+        <h4 className="font-upheaval truncate text-lg text-gray-200">
           {character.getName()}
         </h4>
       </div>
@@ -66,7 +97,7 @@ export const CharacterMarks = ({ character }: CharacterMarksProps) => {
       <div className="space-y-3">
         {/* Solo Marks */}
         <div>
-          <p className="text-xs text-gray-400 uppercase tracking-wider mb-2 font-semibold">
+          <p className="mb-2 text-xs font-semibold tracking-wider text-gray-400 uppercase">
             Solo Marks
           </p>
           <div className="flex flex-wrap gap-0.5">
@@ -85,7 +116,7 @@ export const CharacterMarks = ({ character }: CharacterMarksProps) => {
         {/* Online Marks */}
         {Constants.VERSION_LOADED === VersionEnum.ONLINE && (
           <div>
-            <p className="text-xs text-gray-400 uppercase tracking-wider mb-2 font-semibold">
+            <p className="mb-2 text-xs font-semibold tracking-wider text-gray-400 uppercase">
               Online Marks
             </p>
             <div className="flex flex-wrap gap-0.5">
